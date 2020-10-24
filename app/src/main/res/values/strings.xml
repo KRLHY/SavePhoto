@@ -1,0 +1,16 @@
+<resources>
+    <string name="appName" translatable="false">SavePhoto</string>
+    <string name="instructions">Instructions</string>
+    <string name="about">About</string>
+    <string name="instructionsBody">You may want to save photos you like when you browse through other applications. It\'s easy to save your favorite photos by sharing the photos you want to save in other applications and letting \"%s\" to receive the sharing. Or you want to save photos in JPEG format converted from HEIF format photos by album software provided by \"MIUI\" system. Try this application to help you improve the sharing and saving experience of HEIF format photos in current Android environment.</string>
+    <string name="copyright" translatable="false">Copyright &#169; All Rights Reserved.</string>
+    <string name="designer" translatable="false">\"KR LHY\" Design, Create And Build This Application.</string>
+    <string name="ok">Ok</string>
+    <string name="saveDirectory">Click the button below to save the photos you need to your phone path :</string>
+    <string name="savePhoto">Save Photo</string>
+    <string name="error">Something went wrong......</string>
+    <string name="getShareFailed">Sorry, there was an error in getting / parsing the shared photos. We will exit the program immediately!</string>
+    <string name="getPhoto">Photo Preview :</string>
+    <string name="saveSuccess">\"%s\" has successfully saved the photo</string>
+    <string name="website">Official download website</string>
+</resources>
