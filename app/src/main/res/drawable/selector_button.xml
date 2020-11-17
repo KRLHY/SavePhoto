@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="false">
-        <shape android:shape="rectangle">
-            <corners android:radius="5dp" />
-            <solid android:color="@color/colorPrimary" />
-            <padding android:bottom="15dp" android:left="15dp" android:right="15dp" android:top="15dp" />
-        </shape>
-    </item>
-
-    <item android:state_pressed="true">
-        <shape android:shape="rectangle">
-            <corners android:radius="5dp" />
-            <solid android:color="@color/colorButtonClick" />
-            <padding android:bottom="15dp" android:left="15dp" android:right="15dp" android:top="15dp" />
-        </shape>
-    </item>
-</selector>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorButtonClick">
+    <item android:drawable="@drawable/button_shape" />
+</ripple>
