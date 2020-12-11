@@ -12,31 +12,40 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_savephotobutton.*
 import kotlinx.android.synthetic.main.activity_savephotopreviewimage.*
 import java.io.BufferedOutputStream
+import kotlin.system.exitProcess
 
 class GetShareActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_getshare)
         val intent = intent
-        if (intent == null) {
+        if (intent == null || intent.type?.length!! < 5) {
             AlertDialog.Builder(this).apply {
                 setTitle(getString(R.string.error))
                 setMessage(getString(R.string.getShareFailed))
                 setCancelable(false)
-                setPositiveButton(getString(R.string.ok)) { _, _ -> }
+                setPositiveButton(getString(R.string.ok)) { _, _ -> finish() }
                 show()
             }
-            finish()
-        }
-        val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
-        val bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(uri!!))
-        Glide.with(this).load(bitmap).into(previewImageView)
-        savePhoto.setOnClickListener {
-            val saveIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
-            saveIntent.type = "image/jpeg"
-            saveIntent.addCategory(Intent.CATEGORY_OPENABLE)
-            saveIntent.putExtra(Intent.EXTRA_TITLE, getString(R.string.appName))
-            startActivityForResult(saveIntent, 1)
+        } else if (intent.type!!.substring(0, 5) != "image") {
+            AlertDialog.Builder(this).apply {
+                setTitle(getString(R.string.error))
+                setMessage(getString(R.string.getShareFailed))
+                setCancelable(false)
+                setPositiveButton(getString(R.string.ok)) { _, _ -> finish() }
+                show()
+            }
+        } else {
+            val uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)
+            val bitmap = BitmapFactory.decodeStream(contentResolver.openInputStream(uri!!))
+            Glide.with(this).load(bitmap).into(previewImageView)
+            savePhoto.setOnClickListener {
+                val saveIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
+                saveIntent.type = "image/jpeg"
+                saveIntent.addCategory(Intent.CATEGORY_OPENABLE)
+                saveIntent.putExtra(Intent.EXTRA_TITLE, getString(R.string.appName))
+                startActivityForResult(saveIntent, 1)
+            }
         }
     }
 

@@ -7,7 +7,7 @@
     <string name="saveDirectory">点击下方的按钮保存你需要的照片到本地地址：</string>
     <string name="savePhoto">保存照片</string>
     <string name="error">发生了某些错误......</string>
-    <string name="getShareFailed">非常抱歉，在获取/解析分享的照片时发生了错误，将会退出程序！</string>
+    <string name="getShareFailed">非常抱歉，在获取/解析分享的照片时发生了错误，接收到的文件可能不是照片，将会退出程序！</string>
     <string name="getPhoto">照片预览：</string>
     <string name="saveSuccess">\"%s\" 已经成功保存照片</string>
     <string name="website">官方下载地址</string>

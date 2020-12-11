@@ -9,7 +9,7 @@
     <string name="saveDirectory">Click the button below to save the photos you need to your phone path :</string>
     <string name="savePhoto">Save Photo</string>
     <string name="error">Something went wrong......</string>
-    <string name="getShareFailed">Sorry, there was an error in getting / parsing the shared photos. We will exit the program immediately!</string>
+    <string name="getShareFailed">Sorry, there was an error in getting / parsing the shared photos. The received files may not be photos and will exit the program!</string>
     <string name="getPhoto">Photo Preview :</string>
     <string name="saveSuccess">\"%s\" has successfully saved the photo</string>
     <string name="website">Official download website</string>
