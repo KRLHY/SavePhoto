@@ -12,5 +12,8 @@
     <string name="getShareFailed">Sorry, there was an error in getting / parsing the shared photos. The received files may not be photos and will exit the program!</string>
     <string name="getPhoto">Photo Preview :</string>
     <string name="saveSuccess">\"%s\" has successfully saved the photo</string>
-    <string name="website">Official download website</string>
+    <string name="websiteHead">Official download website</string>
+    <string name="websiteBody" translatable="false">https://www.coolapk.com/apk/com.kr.savephoto</string>
+    <string name="openSourceHead">Open source address</string>
+    <string name="openSourceBody" translatable="false">https://github.com/KRLHY/SavePhoto</string>
 </resources>

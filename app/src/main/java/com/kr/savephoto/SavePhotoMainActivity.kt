@@ -22,8 +22,8 @@ class SavePhotoMainActivity : AppCompatActivity() {
                 setMessage("${getString(R.string.copyright)}\n\n${getString(R.string.designer)}")
                 setCancelable(true)
                 setPositiveButton(getString(R.string.ok)) { _, _ -> }
-                setNeutralButton(getString(R.string.website)) { _, _ ->
-                    val uri: Uri = Uri.parse("https://www.coolapk.com/apk/com.kr.savephoto")
+                setNeutralButton(getString(R.string.websiteHead)) { _, _ ->
+                    val uri: Uri = Uri.parse(getString(R.string.websiteBody))
                     val intent = Intent(Intent.ACTION_VIEW, uri)
                     startActivity(intent)
                 }

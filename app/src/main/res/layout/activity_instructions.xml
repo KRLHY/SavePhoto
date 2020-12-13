@@ -17,6 +17,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/instructionsHead"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/openSourceHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/instructionsBody"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/openSourceBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/openSourceHead"
+        android:layout_marginBottom="10dp"
+        android:autoLink="all"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/websiteHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/openSourceBody"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/websiteBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/websiteHead"
+        android:layout_marginBottom="10dp"
+        android:autoLink="all"
         android:textSize="18sp" />
 
     <LinearLayout

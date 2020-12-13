@@ -10,5 +10,6 @@
     <string name="getShareFailed">非常抱歉，在获取/解析分享的照片时发生了错误，接收到的文件可能不是照片，将会退出程序！</string>
     <string name="getPhoto">照片预览：</string>
     <string name="saveSuccess">\"%s\" 已经成功保存照片</string>
-    <string name="website">官方下载地址</string>
+    <string name="websiteHead">官方下载地址</string>
+    <string name="openSourceHead">开源地址</string>
 </resources>

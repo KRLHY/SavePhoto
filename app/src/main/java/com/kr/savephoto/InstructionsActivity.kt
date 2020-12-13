@@ -13,6 +13,10 @@ class InstructionsActivity : AppCompatActivity() {
             "\"${getString(R.string.appName)}\" ${getString(R.string.instructions)}"
         instructionsBody.text =
             "${getString(R.string.instructionsBody, getString(R.string.appName))}"
+        openSourceHead.text = getString(R.string.openSourceHead)
+        openSourceBody.text = getString(R.string.openSourceBody)
+        websiteHead.text = getString(R.string.websiteHead)
+        websiteBody.text = getString(R.string.websiteBody)
         instructionsCopyright.text = getString(R.string.copyright)
         instructionsDesigner.text = getString(R.string.designer)
     }
