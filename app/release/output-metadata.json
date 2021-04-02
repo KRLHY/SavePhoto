@@ -4,14 +4,14 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.kr.savephoto",
+  "applicationId": "com.kr.savephoto2",
   "variantName": "processReleaseResources",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 12,
-      "versionName": "2.1",
+      "versionCode": 13,
+      "versionName": "3.0",
       "outputFile": "app-release.apk"
     }
   ]

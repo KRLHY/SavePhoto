@@ -1,4 +1,4 @@
-package com.kr.savephoto
+package com.kr.savephoto2
 
 import org.junit.Test
 
