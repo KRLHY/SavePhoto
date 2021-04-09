@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout-land/activity_save_photo_get_save.xml" value="0.2916666666666667" />
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout-land/activity_save_photo_instructions.xml" value="0.27395833333333336" />
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout-large/activity_save_photo_get_save.xml" value="0.190234375" />
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout-large/activity_save_photo_instructions.xml" value="0.190234375" />
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout/activity_save_photo_get_save.xml" value="0.2" />
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout/activity_save_photo_instructions.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/SavePhoto2/app/src/main/res/layout/activity_save_photo_main.xml" value="0.25364583333333335" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

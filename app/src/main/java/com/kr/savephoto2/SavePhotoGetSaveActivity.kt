@@ -42,8 +42,12 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
                 .create()
                 .show()
         } else {
-            val uri: Uri = intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)!!
-            Glide.with(this).load(uri).diskCacheStrategy(DiskCacheStrategy.NONE)
+            val bitmap: Bitmap = BitmapFactory.decodeStream(
+                contentResolver.openInputStream(
+                    intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)!!
+                )
+            )
+            Glide.with(this).load(bitmap).diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(binding.imageView)
         }
         binding.buttonSavePhoto.setOnClickListener {
