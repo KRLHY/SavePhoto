@@ -4,82 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".SavePhotoGetSaveActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTitle2"
+        android:id="@+id/toolbar3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:elevation="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/elevation"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/app_name"
         app:titleTextColor="@color/white" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/background"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/textViewPhotoPreview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:text="@string/photo_preview"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textSizeBig"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarTitle2">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-        <TextView
-            android:id="@+id/textViewPhotoPreview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="@string/photo_preview"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_percent="0.1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin"
+        app:cardCornerRadius="@dimen/cardRadius"
+        app:cardElevation="@dimen/elevation"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSavePhoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPhotoPreview">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:adjustViewBounds="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:contentDescription="@string/photo_preview"
             android:scaleType="fitCenter"
-            app:layout_constraintBottom_toTopOf="@id/buttonSavePhoto"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline"
             app:srcCompat="@drawable/ic_error" />
+    </androidx.cardview.widget.CardView>
 
-        <Button
-            android:id="@+id/buttonSavePhoto"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:text="@string/save_photo"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <Button
+        android:id="@+id/buttonSavePhoto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin"
+        android:padding="@dimen/padding"
+        android:text="@string/save_photo"
+        android:textSize="@dimen/textSizeMedium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

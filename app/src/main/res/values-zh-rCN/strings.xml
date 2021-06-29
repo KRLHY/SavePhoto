@@ -15,5 +15,5 @@
     <string name="photo_saving_title">正在保存中......</string>
     <string name="photo_saving_content">照片正在保存中，请耐心等待结束。</string>
     <string name="save_photo_success_title">保存成功</string>
-    <string name="save_photo_success_content">\"SavePhoto\"已经成功保存照片</string>
+    <string name="save_photo_success_content">\"SavePhoto\"已经成功保存照片。</string>
 </resources>

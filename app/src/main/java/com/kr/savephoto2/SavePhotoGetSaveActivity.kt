@@ -3,7 +3,6 @@ package com.kr.savephoto2
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -18,47 +17,35 @@ import kotlinx.coroutines.withContext
 import java.io.BufferedOutputStream
 
 class SavePhotoGetSaveActivity : AppCompatActivity() {
-    lateinit var binding: ActivitySavePhotoGetSaveBinding
-
+    var bitmap: Bitmap? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySavePhotoGetSaveBinding.inflate(layoutInflater)
+        val binding = ActivitySavePhotoGetSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val intent: Intent? = intent
+        val intent = intent
         if (intent == null || intent.type?.length!! < 5) {
-            AlertDialog.Builder(this)
-                .setTitle(getString(R.string.get_photo_error_title))
-                .setMessage(getString(R.string.get_photo_error_content))
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.button_ok)) { _, _ -> finish() }
-                .create()
-                .show()
+            showFalseAlertDialog()
         } else if (intent.type!!.substring(0, 5) != "image") {
-            AlertDialog.Builder(this)
-                .setTitle(getString(R.string.get_photo_error_title))
-                .setMessage(getString(R.string.get_photo_error_content))
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.button_ok)) { _, _ -> finish() }
-                .create()
-                .show()
+            showFalseAlertDialog()
         } else {
-            val bitmap: Bitmap = BitmapFactory.decodeStream(
+            bitmap = BitmapFactory.decodeStream(
                 contentResolver.openInputStream(
-                    intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)!!
+                    intent.getParcelableExtra(
+                        Intent.EXTRA_STREAM
+                    )!!
                 )
             )
             Glide.with(this).load(bitmap).diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(binding.imageView)
         }
         binding.buttonSavePhoto.setOnClickListener {
-            val saveIntent: Intent = Intent(Intent.ACTION_CREATE_DOCUMENT)
+            val saveIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
             saveIntent.type = "image/jpeg"
             saveIntent.addCategory(Intent.CATEGORY_OPENABLE)
             saveIntent.putExtra(Intent.EXTRA_TITLE, getString(R.string.app_name))
             startActivityForResult(saveIntent, 1)
         }
     }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val alertDialog = AlertDialog.Builder(this).setView(R.layout.alertdialog_processing)
@@ -68,14 +55,9 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
         alertDialog.show()
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
-                val bitmap: Bitmap = BitmapFactory.decodeStream(
-                    contentResolver.openInputStream(
-                        intent.getParcelableExtra<Uri>(Intent.EXTRA_STREAM)!!
-                    )
-                )
                 val fileOutputStream = contentResolver.openOutputStream(data?.data!!)
                 val fileStream = BufferedOutputStream(fileOutputStream)
-                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileStream)
+                bitmap!!.compress(Bitmap.CompressFormat.JPEG, 100, fileStream)
                 fileStream.flush()
                 fileStream.close()
                 MainScope().launch {
@@ -90,5 +72,14 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    private fun showFalseAlertDialog() {
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.get_photo_error_title))
+            .setMessage(getString(R.string.get_photo_error_content))
+            .setCancelable(false)
+            .setPositiveButton(getString(R.string.button_ok)) { _, _ -> finish() }
+            .create()
+            .show()
     }
 }

@@ -4,58 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:paddingBottom="@dimen/margin"
     tools:context=".SavePhotoMainActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTitle"
+        android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:elevation="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        android:background="?attr/colorPrimary"
+        android:elevation="@dimen/elevation"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/app_name"
         app:titleTextColor="@color/white" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <Button
+        android:id="@+id/buttonInstructions"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/background"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:padding="@dimen/padding"
+        android:text="@string/instructions"
+        android:textAlignment="viewStart"
+        android:textAllCaps="@bool/buttonCaps"
+        android:textSize="@dimen/textSizeMedium"
+        app:icon="@drawable/instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:padding="@dimen/padding"
+        android:text="@string/about"
+        android:textAlignment="viewStart"
+        android:textAllCaps="@bool/buttonCaps"
+        android:textSize="@dimen/textSizeMedium"
+        app:icon="@drawable/about"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarTitle">
-
-        <Button
-            android:id="@+id/buttonInstructions"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:text="@string/instructions"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:icon="@drawable/instructions"
-            app:layout_constraintBottom_toTopOf="@+id/buttonAbout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/buttonAbout"
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:text="@string/about"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:icon="@drawable/about"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonInstructions" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/buttonInstructions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

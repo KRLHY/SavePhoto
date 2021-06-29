@@ -7,9 +7,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SavePhoto2">
+        android:theme="@style/Theme.SavePhoto">
 
-        <activity android:name=".SavePhotoMainActivity" android:launchMode="singleTask">
+        <activity android:name="com.kr.savephoto2.SavePhotoMainActivity" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,9 +17,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SavePhotoInstructionsActivity" android:launchMode="singleTask" />
+        <activity android:name="com.kr.savephoto2.SavePhotoInstructionsActivity" android:launchMode="singleTask" />
 
-        <activity android:name=".SavePhotoGetSaveActivity" android:launchMode="singleTask">
+        <activity android:name="com.kr.savephoto2.SavePhotoGetSaveActivity" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
