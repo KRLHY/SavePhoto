@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -35,8 +36,17 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
                     )!!
                 )
             )
+            if (bitmap!!.height > bitmap!!.width || binding.guideline != null) {
+                LayoutInflater.from(binding.linearLayoutPhotoPreview.context).inflate(
+                    R.layout.cardview_photo_preview_height, binding.linearLayoutPhotoPreview, true
+                )
+            } else {
+                LayoutInflater.from(binding.linearLayoutPhotoPreview.context).inflate(
+                    R.layout.cardview_photo_preview_width, binding.linearLayoutPhotoPreview, true
+                )
+            }
             Glide.with(this).load(bitmap).diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(binding.imageView)
+                .into(findViewById(R.id.imageView))
         }
         binding.buttonSavePhoto.setOnClickListener {
             val saveIntent = Intent(Intent.ACTION_CREATE_DOCUMENT)
@@ -46,6 +56,7 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
             startActivityForResult(saveIntent, 1)
         }
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val alertDialog = AlertDialog.Builder(this).setView(R.layout.alertdialog_processing)
@@ -73,6 +84,7 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun showFalseAlertDialog() {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.get_photo_error_title))

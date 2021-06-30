@@ -21,13 +21,6 @@
         app:title="@string/app_name"
         app:titleTextColor="@color/white" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
-
     <TextView
         android:id="@+id/textViewPhotoPreview"
         android:layout_width="wrap_content"
@@ -40,25 +33,18 @@
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayoutPhotoPreview"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/margin"
-        app:cardCornerRadius="@dimen/cardRadius"
-        app:cardElevation="@dimen/elevation"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/photo_preview"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_error" />
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/buttonSavePhoto"
@@ -71,5 +57,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
