@@ -3,7 +3,7 @@
     <string name="instructions">Instructions</string>
     <string name="about">About</string>
     <string name="instructions_title">SavePhoto Instructions</string>
-    <string name="instructions_content">You may want to save photos you like when you browse through other applications. It\'s easy to save your favorite photos by sharing the photos you want to save in other applications and letting \"SavePhoto\" to receive the sharing. Or you want to save photos in JPEG format converted from HEIF format photos by album software provided by \"MIUI"\ system. Try this application to help you improve the sharing and saving experience of HEIF format photos in current Android environment.</string>
+    <string name="instructions_content">You may want to save photos you like when you browse through other applications. It\'s easy to save your favorite photos by sharing the photos you want to save in other applications and letting \"SavePhoto\" to receive the sharing. Or you want to save photos in JPEG format converted from HEIF format photos by album software provided by \"MIUI\" system. Try this application to help you improve the sharing and saving experience of HEIF format photos in current Android environment.</string>
     <string name="open_source_title">Open source website</string>
     <string name="open_source_content" translatable="false">https://github.com/KRLHY/SavePhoto/</string>
     <string name="download_title">Official download website</string>
