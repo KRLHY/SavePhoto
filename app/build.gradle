@@ -15,8 +15,8 @@ android {
         applicationId "com.kr.savephoto2"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 17
-        versionName "3.4"
+        versionCode 18
+        versionName "3.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

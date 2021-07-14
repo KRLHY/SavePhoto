@@ -8,9 +8,11 @@ import androidx.appcompat.app.AlertDialog
 import com.kr.savephoto2.databinding.ActivitySavePhotoMainBinding
 
 class SavePhotoMainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySavePhotoMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivitySavePhotoMainBinding.inflate(layoutInflater)
+        binding = ActivitySavePhotoMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.buttonInstructions.setOnClickListener {
             val intent = Intent(this, SavePhotoInstructionsActivity::class.java)

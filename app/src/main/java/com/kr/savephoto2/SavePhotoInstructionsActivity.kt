@@ -5,9 +5,11 @@ import android.os.Bundle
 import com.kr.savephoto2.databinding.ActivitySavePhotoInstructionsBinding
 
 class SavePhotoInstructionsActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySavePhotoInstructionsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivitySavePhotoInstructionsBinding.inflate(layoutInflater)
+        binding = ActivitySavePhotoInstructionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.toolbar2.setNavigationOnClickListener {
             finish()

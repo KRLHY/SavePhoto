@@ -18,10 +18,12 @@ import kotlinx.coroutines.withContext
 import java.io.BufferedOutputStream
 
 class SavePhotoGetSaveActivity : AppCompatActivity() {
-    var bitmap: Bitmap? = null
+    private lateinit var binding: ActivitySavePhotoGetSaveBinding
+    private lateinit var bitmap: Bitmap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivitySavePhotoGetSaveBinding.inflate(layoutInflater)
+        binding = ActivitySavePhotoGetSaveBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val intent = intent
         if (intent == null || intent.type?.length!! < 5) {
@@ -36,7 +38,7 @@ class SavePhotoGetSaveActivity : AppCompatActivity() {
                     )!!
                 )
             )
-            if (bitmap!!.height > bitmap!!.width || binding.guideline != null) {
+            if (bitmap.height > bitmap.width || binding.guideline != null) {
                 LayoutInflater.from(binding.linearLayoutPhotoPreview.context).inflate(
                     R.layout.cardview_photo_preview_height, binding.linearLayoutPhotoPreview, true
                 )
